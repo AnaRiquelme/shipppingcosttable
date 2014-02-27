@@ -9,70 +9,332 @@ and open the template in the editor.
         <title>Shipping Cost table</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
+        <style>
+            body
+            {
+                font-family: verdana;
+                text-align: center; 
+            }
+            @font-face
+            {
+                font-family: Wide Latin;
+                src: url(fonts/WideLatin.ttf);
+            }
+            table
+            {
+                width:100%;
+            }
+            .cabecera
+            {
+                background-color: #9D2129!important;
+                color: #fff;  
+
+            }
+            .europe
+            {
+                background-color: #b02c1e;
+                color: #fff;
+
+                font-size:18px;
+            }
+            .zona
+            {
+
+                background-color:#808382;
+                color: #fff;
+            }
+            td.zona
+            {
+                min-width:90px;
+
+            }
+            .moneytype
+            {
+                background-color:#c8cac5;
+                color: #383d3f;
+            }
+            .tituloizq
+            {
+                background-color: #b02c1e;
+                color: #fff; 
+                font-size: 15px;
+                min-width: 150px;
+                max-width: 150px;
+            }
+            img
+            {
+                width:30px;
+            }
+            /*-------TABLA bANDERAS----------*/
+
+            .plans {
+                margin: 40px auto;
+                width: 80%;
+                zoom: 1;
+            }
+            .plans:before, .plans:after {
+                content: '';
+                display: table;
+            }
+            .plans:after {
+                clear: both;
+            }
+
+            .plan {
+                float: left;
+                width: 30%;
+                height: 350px;
+                margin: 10px 0;
+                padding: 20px;
+                text-align: center;
+                background-clip: padding-box;
+                border: solid #9D2129;
+                border-width: 2px 0 2px 2px;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            }
+            .plan2 {
+                float: left;
+                width: 90%;
+                margin: 10px 0;
+                padding: 20px;
+                text-align: center;
+                background-clip: padding-box;
+                border: solid #9D2129;
+                border-width: 2px;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            }
+            .plan:last-child {
+                border-width: 2px;
+            }
+
+            .plan-title {
+                position: relative;
+                margin: -10px -10px 20px;
+                padding: 20px;
+                /* line-height: 1;*/
+                font-size: 16px;
+                font-weight: bold;
+                font-family: HERO !important;
+                color: #595f6b;
+                /*border-bottom: 1px dashed #d2d2d2;*/
+            }
+            .plan-title:before {
+                content: '';
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background-size: 3px 1px;
+                background-image: -webkit-linear-gradient(left, white, white 33%, #d2d2d2 34%, #d2d2d2);
+                background-image: -moz-linear-gradient(left, white, white 33%, #d2d2d2 34%, #d2d2d2);
+                background-image: -o-linear-gradient(left, white, white 33%, #d2d2d2 34%, #d2d2d2);
+                background-image: linear-gradient(to right, white, white 33%, #d2d2d2 34%, #d2d2d2);
+            }
+
+            .plan-price {
+                margin: 0 auto 20px;
+                font-size: 15px;
+                font-weight: bold;
+                color: #595f6b;
+                
+
+            }
+            .plan-price > span {
+                font-size: 15px;
+                font-weight: normal;
+                color: #aaa!important;
+            }
+
+            .plan-button {
+                display: inline-block;
+                vertical-align: top;
+                padding: 0 15px;
+                line-height: 30px;
+                font-weight: bold;
+                color: white;
+                text-decoration: none;
+                text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+                background: #a3ad40;
+                border-bottom-color: black;
+            }
+            .plan-button:hover
+            {
+                color:#fff!important;
+                background: #768019;
+            }
+            .ireland
+            {
+                margin: 2px;
+            }
+            .italy
+            {
+                width: 25px;
+            }
+            .australia
+            {
+                width: 35px;
+                margin-top: 2px;
+            }
+        </style>
     </head>
     <body>
-       <table cellpadding="25" style="width: 762px">
+        <table cellpadding="3">
             <thead>
-                <tr>
-                    <th scope="col" colspan="10"></th>
-                    <th scope="col" colspan="15" style="background-color: #9D2129;color: #fff;"><font FACE="Arial" SIZE=4>Shipping cost · Versandkosten · Costes de envío</font></th>
-                    
+                <tr class="cabecera">
+
+                    <th scope="col" colspan="14">Shipping cost · Versandkosten · Costes de envío</th>
+
                 </tr>
-                <tr>
-                    <th scope="col" colspan="10"></th>
-                    <th scope="col" colspan="8" style="background-color: #b02c1e;color: #fff;"><font FACE="Arial" SIZE=2>EUROPE</font></th>
-                    <th scope="col" colspan="9" style="background-color: #b02c1e;color: #fff;"><font FACE="Arial" SIZE=2>WORLDWIDE</font></th>
-                   
+                <tr >
+                    <th scope="col" colspan="14" class="europe">EUROPE</th>
+
+
                 </tr>
-            </thead>
-            <tfoot>
-                <tr>
-                    <th scope="col" rowspan="2" colspan="9"></th>
-                    <th scope="col" colspan="15" style="background-color: #9D2129;color: #fff"><font FACE="Arial" SIZE=1>Europe Zone 1: <img>Austria <img>Belgium <img>France <img>Holland <img>Italy <img>Luxembourg <img>Portugal <img>United Kingdom <br> Europe Zone 2: <img>Denmark <img>Hungry <img>Poland <img>Czech Republic<br> Europe Zone 3: <img>Bulgaria <img>Slovakia <img>Slovenia <img>Estonia <img>Finland <img>Ireland <img>Latvia <img>Lithuania <img>Romania <img>Sweden<br></font></th>
-                </tr>
-            </tfoot>
+            </thead>          
             <tbody>
                 <tr>
-                    <th scope="col" rowspan="2" colspan="10" style="background-color: #b02c1e;color: #fff;">Weight</th>
-                    <td></td>
-                    <td></td>
-                    <td style="background-color:#aaa;color: #fff;"><font FACE="Arial" SIZE=2><img>España Península</font></td>
-                    <td style="background-color:#222;color: #fff;"><font FACE="Arial" SIZE=2><img>Germany</font></td>
-                    <td style="background-color:#222;color: #fff;"><font FACE="Arial" SIZE=2><img>Norway<img>Switzerland</font></td>
-                    <td style="background-color:#222;color: #fff;"><font FACE="Arial" SIZE=2>1 Zone</font></td>
-                    <td style="background-color:#222;color: #fff;"><font FACE="Arial" SIZE=2>2 Zone</font></td>
-                    <td style="background-color:#222;color: #fff;"><font FACE="Arial" SIZE=2>3 Zone</font></td>
-                    <td scope="col" colspan="2" style="background-color:#222;color: #fff;"><font FACE="Arial" SIZE=2><img>USA <img>Canada</font></td>
-                    <td scope="col" colspan="2" style="background-color:#222;color: #fff;"><font FACE="Arial" SIZE=2><img>Australia</font></td>
-                    <td scope="col" colspan="2" style="background-color:#222;color: #fff;"><font FACE="Arial" SIZE=2><img>Worldwide</font></td>
-                    
+                    <th scope="col" rowspan="2" colspan="2" class="tituloizq">Weight</th>
+
+                    <td class="zona"><img src="img/spain.png" alt="suiza"><br>España <br>Península</td>
+                    <td class="zona"><img src="img/germany.png" alt="suiza"><br>Germany</td>
+                    <td class="zona"><img src="img/norway.png" alt="suiza"><br>Norway<br><img src="img/switzeland.png" alt="suiza"><br>Switzerland</td>
+                    <td class="zona">1 Zone</td>
+                    <td class="zona">2 Zone</td>
+                    <td class="zona">3 Zone</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td style="background-color:#fd7060;color: #fff;"><font FACE="Arial" SIZE=2>Euro</font></td>
-                    <td style="background-color:#fd7060;color: #fff;"><font FACE="Arial" SIZE=2>Euro</font></td>
-                    <td style="background-color:#fd7060;color: #fff;"><font FACE="Arial" SIZE=2>Euro</font></td>
-                    <td style="background-color:#fd7060;color: #fff;"><font FACE="Arial" SIZE=2>Euro</font></td>
-                    <td style="background-color:#fd7060;color: #fff;"><font FACE="Arial" SIZE=2>Euro</font></td>
-                    <td style="background-color:#fd7060;color: #fff;"><font FACE="Arial" SIZE=2>Euro</font></td>
-                    <td style="background-color:#fd7060;color: #fff;"><font FACE="Arial" SIZE=2>Euro</font></td>
-                    <td style="background-color:#fd7060;color: #fff;"><font FACE="Arial" SIZE=2>US Dollar</font></td>
-                    <td style="background-color:#fd7060;color: #fff;"><font FACE="Arial" SIZE=2>Euro</font></td>
-                    <td style="background-color:#fd7060;color: #fff;"><font FACE="Arial" SIZE=2>US Dollar</font></td>
-                    <td style="background-color:#fd7060;color: #fff;"><font FACE="Arial" SIZE=2>Euro</font></td>
-                    <td style="background-color:#fd7060;color: #fff;"><font FACE="Arial" SIZE=2>US Dollar</font></td>
-                </tr>
+
+                    <td class="moneytype">Euro</td>
+                    <td class="moneytype">Euro</td>
+                    <td class="moneytype">Euro</td>
+                    <td class="moneytype">Euro</td>
+                    <td class="moneytype">Euro</td>
+                    <td class="moneytype">Euro</td>
                 <tr>
-                    <th scope="col" colspan="9" style="background-color: #b02c1e;color: #fff;">1-100 gr.</th>
-                    <td></td>
-                    <td></td>
+                    <th scope="col" rowspan="1" colspan="2" class="tituloizq">1-100 gr.</th>
                     <td style="color:#333"><font FACE="Arial" SIZE=2>7</font></td>
                     <td style="color:#333"><font FACE="Arial" SIZE=2>5</font></td>
                     <td style="color:#333"><font FACE="Arial" SIZE=2>5</font></td>
                     <td style="color:#333"><font FACE="Arial" SIZE=2>5</font></td>
                     <td style="color:#333"><font FACE="Arial" SIZE=2>5</font></td>
                     <td style="color:#333"><font FACE="Arial" SIZE=2>5</font></td>
+
+                </tr>
+                <tr>
+                    <th scope="col" rowspan="1" colspan="2" class="tituloizq">101-500 gr.</th>
+
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>7</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
+
+                </tr>
+                <tr>
+                    <th scope="col" rowspan="1" colspan="2" class="tituloizq">501-1000 gr.</th>
+
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>7</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>16</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>16</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>16</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>16</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>16</font></td>
+
+                </tr>
+                <tr>
+                    <th scope="col" rowspan="1" colspan="2" class="tituloizq">1001-2000 gr.</th>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>7</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>16</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>23</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>18</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>20</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>23</font></td>
+
+                </tr>
+                <tr>
+                    <th scope="col" rowspan="1" colspan="2" class="tituloizq">2001-3000 gr.</th>
+
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>16</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>33</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>18</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>20</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>33</font></td>
+
+                </tr>
+                <tr>
+                    <th scope="col" rowspan="1" colspan="2" class="tituloizq">3001-4000 gr.</th>
+
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>17</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>43</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>19</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>21</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>43</font></td>
+
+                </tr>
+                <tr>
+                    <th scope="col" rowspan="1" colspan="2" class="tituloizq">4001-5000 gr.</th>
+
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>17</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>53</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>19</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>21</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>53</font></td>
+
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr >
+                    <th scope="col" rowspan="2"  colspan="13" style='background-color:#9D2129;'></th>
+
+                </tr>
+
+            </tfoot>
+        </table>
+        <div class="plans">
+            <div class="plan2">
+                <p class="plan-price">Please Note: Import duties, taxes, and charges are not included in the item price or shipping cost. These charges are the buyer's responsibility.</p>
+            </div>
+        </div>
+        <table cellpadding="3" style="width: 100%">
+            <thead>
+
+                <tr >
+                    <th class="europe" scope="col" colspan="14">WORLDWIDE</th>
+
+                </tr>
+            </thead>          
+            <tbody>
+                <tr>
+                    <th scope="col" rowspan="2" colspan="2" class="tituloizq">Weight</th>
+                    <td scope="col" colspan="2" class="zona"><img src="img/us.png" alt="suiza"><br>USA <br><img class="australia" src="img/canada.png" alt="suiza"><br>Canada</td>
+                    <td scope="col" colspan="2" class="zona"><img class="australia italy" src="img/australia.png"><br>Australia</td>
+                    <td scope="col" colspan="2" class="zona"><img>Worldwide</td>
+
+                </tr>
+                <tr>
+                    <td class="moneytype">Euro</td>
+                    <td class="moneytype">US Dollar</td>
+                    <td class="moneytype">Euro</td>
+                    <td class="moneytype">US Dollar</td>
+                    <td class="moneytype">Euro</td>
+                    <td class="moneytype">US Dollar</td>
+                </tr>
+                <tr>
+                    <th scope="col" rowspan="1" colspan="2" class="tituloizq">1-100 gr.</th>
+
                     <td style="color:#333"><font FACE="Arial" SIZE=2>6</font></td>
                     <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
                     <td style="color:#333"><font FACE="Arial" SIZE=2>7</font></td>
@@ -81,15 +343,8 @@ and open the template in the editor.
                     <td style="color:#333"><font FACE="Arial" SIZE=2>10</font></td>
                 </tr>
                 <tr>
-                    <th scope="col" colspan="9" style="background-color: #b02c1e;color: #fff;">101-500 gr.</th>
-                    <td></td>
-                    <td></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>7</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
+                    <th scope="col" rowspan="1" colspan="2" class="tituloizq">101-500 gr.</th>
+
                     <td style="color:#333"><font FACE="Arial" SIZE=2>13</font></td>
                     <td style="color:#333"><font FACE="Arial" SIZE=2>19</font></td>
                     <td style="color:#333"><font FACE="Arial" SIZE=2>14</font></td>
@@ -98,15 +353,8 @@ and open the template in the editor.
                     <td style="color:#333"><font FACE="Arial" SIZE=2>20</font></td>
                 </tr>
                 <tr>
-                    <th scope="col" colspan="9" style="background-color: #b02c1e;color: #fff;">501-1000 gr.</th>
-                    <td></td>
-                    <td></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>7</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>15</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>16</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>16</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>16</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>16</font></td>
+                    <th scope="col" rowspan="1" colspan="2" class="tituloizq">501-1000 gr.</th>
+
                     <td style="color:#333"><font FACE="Arial" SIZE=2>24</font></td>
                     <td style="color:#333"><font FACE="Arial" SIZE=2>34</font></td>
                     <td style="color:#333"><font FACE="Arial" SIZE=2>26</font></td>
@@ -115,15 +363,7 @@ and open the template in the editor.
                     <td style="color:#333"><font FACE="Arial" SIZE=2>37</font></td>
                 </tr>
                 <tr>
-                    <th scope="col" colspan="9" style="background-color: #b02c1e;color: #fff;">1001-2000 gr.</th>
-                    <td></td>
-                    <td></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>7</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>16</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>23</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>18</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>20</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>23</font></td>
+                    <th scope="col" rowspan="1" colspan="2" class="tituloizq">1001-2000 gr.</th>
                     <td style="color:#333"><font FACE="Arial" SIZE=2>37</font></td>
                     <td style="color:#333"><font FACE="Arial" SIZE=2>52</font></td>
                     <td style="color:#333"><font FACE="Arial" SIZE=2>39</font></td>
@@ -132,58 +372,55 @@ and open the template in the editor.
                     <td style="color:#333"><font FACE="Arial" SIZE=2>55</font></td>
                 </tr>
                 <tr>
-                    <th scope="col" colspan="9" style="background-color: #b02c1e;color: #fff;">2001-3000 gr.</th>
-                    <td></td>
-                    <td></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>16</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>Contact us</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>18</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>20</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>Contact us</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>Contact us</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>**</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>Contact us</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>**</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>Contact us</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>**</font></td>
+                    <th scope="col" rowspan="1" colspan="2" class="tituloizq">2001-3000 gr.</th>
+
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>47</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>65</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>49</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>67</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>49</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>67</font></td>
                 </tr>
                 <tr>
-                    <th scope="col" colspan="9" style="background-color: #b02c1e;color: #fff;">3001-4000 gr.</th>
-                    <td></td>
-                    <td></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>17</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>Contact us</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>19</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>21</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>Contact us</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>Contact us</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>**</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>Contact us</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>**</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>Contact us</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>**</font></td>
+                    <th scope="col" rowspan="1" colspan="2" class="tituloizq">3001-4000 gr.</th>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>57</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>78</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>59</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>81</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>59</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>81</font></td>
                 </tr>
                 <tr>
-                    <th scope="col" colspan="9" style="background-color: #b02c1e;color: #fff;">4001-5000 gr.</th>
-                    <td></td>
-                    <td></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>9</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>17</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>Contact us</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>19</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>21</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>Contact us</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>Contact us</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>**</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>Contact us</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>**</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>Contact us</font></td>
-                    <td style="color:#333"><font FACE="Arial" SIZE=2>**</font></td>
+                    <th scope="col" rowspan="1" colspan="2" class="tituloizq">4001-5000 gr.</th>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>67</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>92</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>69</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>95</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>69</font></td>
+                    <td style="color:#333"><font FACE="Arial" SIZE=2>95</font></td>
                 </tr>
             </tbody>
-            
+            <tfoot>
+                <tr class="cabecera">
+                    <th scope="col" rowspan="2"  colspan="13" style=""></th>
+                   
+                </tr>
+            </tfoot>
         </table>
+        <div class="plans">
+            <div class="plan">
+                <h3>Europe Zone 1: </h3>
+                <p class="plan-price"><img src="img/austria.png"><img src="img/belgium.png"><br>Austria Belgium<br><img src="img/france.png"><img src="img/netherlands.png"><br>France Holland <br><img class="ireland italy" src="img/italy.png"><img class="ireland italy" src="img/portugal.png"><br>Italy Portugal<br> <img src="img/luxembourg.png"><br>Luxembourg<br> <img src="img/uk.png"><br>United Kingdom </p>
+            </div>
+            <div class="plan">
+                <h3>Europe Zone 2:</h3>
+                <p class="plan-price"> <img src="img/denmark.png"><img src="img/hungary.png"><br>Denmark Hungary<br> <img src="img/poland.png"> <br>Poland <br> <img src="img/czech-republic.png"><br>Czech Republic</p>
+            </div>
+            <div class="plan">
+                <h3>Europe Zone 3:</h3>
+                <p class="plan-price"><img src="img/bulgaria.png"><img src="img/slovakia.png"><br>Bulgaria Slovakia<br> <img src="img/slovenia.png"> <img src="img/estonia.png"><br>Slovenia Estonia <br> <img src="img/finland.png"><img class="ireland" src="img/ireland.png"><br>Finland Ireland <br><img src='img/latvia.png'> <img src='img/lithuania.png'><br>Latvia Lithuania<br><img src='img/sweden.png'><br>Sweden</p>
+            </div>
+        </div>
+       
     </body>
 </html>
